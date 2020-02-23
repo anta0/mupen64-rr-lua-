@@ -1433,7 +1433,7 @@ VCR_stopPlayback()
 		m_inputBufferSize = 0;
 	}
 
-	if (m_file)
+	if (m_file && m_task != StartRecording && m_task != Recording)
 	{
 		fclose( m_file );
 		m_file = 0;
