@@ -452,7 +452,7 @@ static void write_movie_header(FILE * file, int numBytes)
 
 void flush_movie()
 {
-	if(m_file && (m_task == Recording || m_task == StartRecording || m_task == StartRecordingFromSnapshot))
+	if(m_file && (m_task == Recording || m_task != StartRecording || m_task != StartRecordingFromSnapshot))
 	{
 		// (over-)write the header
 	    write_movie_header(m_file, MUP_HEADER_SIZE);
